@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Impact Lab — 글로벌 교육 컨설팅 · AI 학습 플랫폼 · 논술{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="relative bg-white overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-navy/5 via-white to-crimson/5 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-navy-light text-navy text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          (주)임팩트 에듀케이션
+        </span>
+        <h1 class="text-5xl lg:text-6xl font-extrabold text-black leading-tight mb-6">
+          당신의 가능성을<br>
+          <span class="text-navy">글로벌로</span> 확장하세요
+        </h1>
+        <p class="text-lg text-body leading-relaxed mb-8">
+          IVY League·Top 20 입시 컨설팅, AI 맞춤 학습, 논술 전문 교육까지<br>
+          Impact Lab이 여러분의 교육 여정을 함께합니다.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="{% url 'contact' %}"
+             class="bg-crimson hover:bg-crimson-dark text-white font-semibold px-8 py-4 rounded-md text-center transition-colors text-base">
+            상담 신청하기
+          </a>
+          <a href="{% url 'ai_lab' %}"
+             class="border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-8 py-4 rounded-md text-center transition-colors text-base">
+            커리큘럼 시작하기
+          </a>
+        </div>
+      </div>
+      <div class="hidden lg:flex justify-center">
+        <div class="relative">
+          <div class="w-80 h-80 bg-navy/10 rounded-full flex items-center justify-center">
+            <img src="{% static 'images/logo.png' %}" alt="Impact Lab" class="h-40 w-auto" />
+          </div>
+          <div class="absolute -top-4 -right-4 bg-crimson text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
+            IVY League 전문
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-navy text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
+            AI 맞춤 학습
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 SERVICE CARDS ===== -->
+<section class="bg-subbg py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-black mb-4">Impact Lab 핵심 서비스</h2>
+      <p class="text-caption text-base max-w-2xl mx-auto">글로벌 교육 전문가와 AI 기술이 결합된 4가지 프리미엄 서비스를 경험하세요.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Admissions -->
+      <a href="{% url 'admissions' %}"
+         class="bg-white border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group block">
+        <div class="w-12 h-12 bg-navy-light rounded-lg flex items-center justify-center mb-4 group-hover:bg-navy transition-colors">
+          <svg class="w-6 h-6 text-navy group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          </svg>
+        </div>
+        <span class="text-xs font-semibold text-crimson bg-crimson/10 px-2 py-0.5 rounded-full">미국 입시</span>
+        <h3 class="text-xl font-bold text-black mt-2 mb-2">Impact Admissions</h3>
+        <p class="text-sm text-caption leading-relaxed">IVY League, HYPSM, Top 20 전문 컨설팅. 필리핀 조기유학 및 어학연수 안내.</p>
+        <div class="mt-4 flex items-center text-navy text-sm font-semibold group-hover:gap-2 gap-1 transition-all">
+          자세히 보기 <span>→</span>
+        </div>
+      </a>
+
+      <!-- AI Lab -->
+      <a href="{% url 'ai_lab' %}"
+         class="bg-white border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group block">
+        <div class="w-12 h-12 bg-navy-light rounded-lg flex items-center justify-center mb-4 group-hover:bg-navy transition-colors">
+          <svg class="w-6 h-6 text-navy group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/>
+          </svg>
+        </div>
+        <span class="text-xs font-semibold text-navy bg-navy-light px-2 py-0.5 rounded-full">AI 학습</span>
+        <h3 class="text-xl font-bold text-black mt-2 mb-2">Impact AI Lab</h3>
+        <p class="text-sm text-caption leading-relaxed">나만의 AI 스쿨. Khan Academy, Coursera, edX 연동 맞춤 커리큘럼 빌더 & LMS.</p>
+        <div class="mt-4 flex items-center text-navy text-sm font-semibold group-hover:gap-2 gap-1 transition-all">
+          자세히 보기 <span>→</span>
+        </div>
+      </a>
+
+      <!-- Veritas -->
+      <a href="{% url 'veritas' %}"
+         class="bg-white border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group block">
+        <div class="w-12 h-12 bg-navy-light rounded-lg flex items-center justify-center mb-4 group-hover:bg-navy transition-colors">
+          <svg class="w-6 h-6 text-navy group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+        </div>
+        <span class="text-xs font-semibold text-navy bg-navy-light px-2 py-0.5 rounded-full">논술</span>
+        <h3 class="text-xl font-bold text-black mt-2 mb-2">Impact Veritas</h3>
+        <p class="text-sm text-caption leading-relaxed">대한민국 입시 논술 전문 플랫폼. 영어 · 한국어 논술 체계적 지도.</p>
+        <div class="mt-4 flex items-center text-navy text-sm font-semibold group-hover:gap-2 gap-1 transition-all">
+          자세히 보기 <span>→</span>
+        </div>
+      </a>
+
+      <!-- Education -->
+      <a href="{% url 'education' %}"
+         class="bg-white border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group block">
+        <div class="w-12 h-12 bg-navy-light rounded-lg flex items-center justify-center mb-4 group-hover:bg-navy transition-colors">
+          <svg class="w-6 h-6 text-navy group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <span class="text-xs font-semibold text-navy bg-navy-light px-2 py-0.5 rounded-full">회사 소개</span>
+        <h3 class="text-xl font-bold text-black mt-2 mb-2">Impact Education</h3>
+        <p class="text-sm text-caption leading-relaxed">Google Coach 출신 CEO Daniel Kim의 글로벌 교육 전문기업. 파트너 & 소셜 임팩트.</p>
+        <div class="mt-4 flex items-center text-navy text-sm font-semibold group-hover:gap-2 gap-1 transition-all">
+          자세히 보기 <span>→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS COUNTER ===== -->
+<section class="bg-navy py-16" x-data="counterSection()" x-intersect.once="startCount()">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-white mb-2">검증된 합격 실적</h2>
+      <p class="text-white/60 text-sm">15년간의 입시 컨설팅 전문성</p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="fade-in">
+        <div class="text-5xl font-extrabold text-white counter-num mb-2" x-text="counts.ivy + '+'">0</div>
+        <div class="text-white/70 text-sm font-medium">IVY League 합격</div>
+      </div>
+      <div class="fade-in" style="animation-delay:0.1s">
+        <div class="text-5xl font-extrabold text-crimson counter-num mb-2" x-text="counts.top20 + '%'">0</div>
+        <div class="text-white/70 text-sm font-medium">Top 20 합격률</div>
+      </div>
+      <div class="fade-in" style="animation-delay:0.2s">
+        <div class="text-5xl font-extrabold text-white counter-num mb-2" x-text="counts.years + '년'">0</div>
+        <div class="text-white/70 text-sm font-medium">입시 컨설팅 경력</div>
+      </div>
+      <div class="fade-in" style="animation-delay:0.3s">
+        <div class="text-5xl font-extrabold text-white counter-num mb-2" x-text="counts.students + '+'">0</div>
+        <div class="text-white/70 text-sm font-medium">누적 지도 학생</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNER LOGOS ===== -->
+{% if partners %}
+<section class="py-14 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-sm font-semibold text-caption uppercase tracking-widest mb-8">파트너사</h2>
+    <div class="flex flex-wrap items-center justify-center gap-10">
+      {% for partner in partners %}
+      <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name }}">
+        {% if partner.logo %}
+          <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="h-10 w-auto partner-logo" />
+        {% else %}
+          <span class="text-caption font-semibold text-lg partner-logo hover:text-navy transition-colors">{{ partner.name }}</span>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="py-14 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-sm font-semibold text-caption uppercase tracking-widest mb-8">파트너사</h2>
+    <div class="flex flex-wrap items-center justify-center gap-10 text-caption">
+      <span class="partner-logo text-lg font-bold hover:text-navy transition-colors">EDV</span>
+      <span class="partner-logo text-lg font-bold hover:text-navy transition-colors">You Can Give</span>
+      <span class="partner-logo text-lg font-bold hover:text-navy transition-colors">Awans International</span>
+      <span class="partner-logo text-lg font-bold hover:text-navy transition-colors">Levite</span>
+      <span class="partner-logo text-lg font-bold hover:text-navy transition-colors">All for School</span>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== TESTIMONIALS ===== -->
+{% if testimonials %}
+<section class="bg-subbg py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-black mb-3">학생 합격 후기</h2>
+      <p class="text-caption text-sm">Impact Lab과 함께 꿈을 이룬 학생들의 이야기</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for t in testimonials %}
+      <div class="bg-white border border-border rounded-xl p-6 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          {% if t.photo %}
+          <img src="{{ t.photo.url }}" alt="{{ t.student_name }}" class="w-10 h-10 rounded-full object-cover"/>
+          {% else %}
+          <div class="w-10 h-10 rounded-full bg-navy-light flex items-center justify-center text-navy font-bold text-sm">
+            {{ t.student_name|first }}
+          </div>
+          {% endif %}
+          <div>
+            <div class="font-semibold text-black text-sm">{{ t.student_name }}</div>
+            <div class="text-xs text-crimson font-medium">{{ t.admitted_school }}</div>
+          </div>
+        </div>
+        <p class="text-sm text-body leading-relaxed">"{{ t.content }}"</p>
+        <div class="mt-3 text-xs text-caption">{{ t.year }}년 합격</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== BLOG PREVIEW ===== -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <h2 class="text-3xl font-bold text-black mb-2">최신 블로그 & 뉴스</h2>
+        <p class="text-caption text-sm">입시 트렌드, AI 학습 가이드, 교육 소식을 전해드립니다.</p>
+      </div>
+      <a href="{% url 'blog' %}" class="hidden sm:inline-flex items-center gap-1 text-navy text-sm font-semibold hover:gap-2 transition-all">
+        전체 보기 →
+      </a>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      {% for category, title, excerpt in blog_previews %}
+      <div class="bg-white border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+        <div class="h-40 bg-gradient-to-br from-navy/10 to-navy/5 flex items-center justify-center">
+          <svg class="w-12 h-12 text-navy/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2"/>
+          </svg>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-navy bg-navy-light px-2 py-0.5 rounded-full">{{ category }}</span>
+          <h3 class="font-bold text-black mt-2 mb-2 text-sm leading-snug group-hover:text-navy transition-colors">{{ title }}</h3>
+          <p class="text-xs text-caption leading-relaxed line-clamp-2">{{ excerpt }}</p>
+        </div>
+      </div>
+      {% empty %}
+      <!-- placeholder cards -->
+      {% for i in "123" %}
+      <div class="bg-white border border-border rounded-xl overflow-hidden shadow-sm">
+        <div class="h-40 bg-gradient-to-br from-subbg to-border/30"></div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-navy bg-navy-light px-2 py-0.5 rounded-full">입시 정보</span>
+          <h3 class="font-bold text-black mt-2 mb-1 text-sm">블로그 포스트가 곧 업로드됩니다</h3>
+          <p class="text-xs text-caption">최신 교육 트렌드와 입시 정보를 준비 중입니다.</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="text-center mt-8 sm:hidden">
+      <a href="{% url 'blog' %}" class="text-navy text-sm font-semibold">전체 보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTS BANNER ===== -->
+<section class="bg-crimson py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-2xl font-bold text-white mb-2">다음 입시 설명회에 참석하세요</h2>
+    <p class="text-white/80 text-sm mb-6">미국 유학 & IVY League 입시 전략 세미나 — 온라인/오프라인 개최</p>
+    <a href="{% url 'events' %}"
+       class="inline-block bg-white text-crimson font-bold px-8 py-3 rounded-md hover:bg-white/90 transition-colors text-sm">
+      이벤트 신청하기
+    </a>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="bg-white py-20">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-black mb-4">지금 바로 시작하세요</h2>
+    <p class="text-body text-base leading-relaxed mb-8">
+      전문 컨설턴트와 1:1 상담을 통해 나에게 맞는 입시 전략을 세워보세요.<br>
+      첫 상담은 무료로 진행됩니다.
+    </p>
+    <a href="{% url 'contact' %}"
+       class="inline-block bg-crimson hover:bg-crimson-dark text-white font-bold px-10 py-4 rounded-md transition-colors text-base">
+      무료 상담 신청하기
+    </a>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+function counterSection() {
+  return {
+    counts: { ivy: 0, top20: 0, years: 0, students: 0 },
+    targets: { ivy: {{ stats.ivy_count|default:92 }}, top20: {{ stats.top20_count|default:94 }}, years: {{ stats.years|default:15 }}, students: {{ stats.students|default:500 }} },
+    started: false,
+    startCount() {
+      if (this.started) return;
+      this.started = true;
+      const duration = 1800;
+      const steps = 60;
+      const interval = duration / steps;
+      let step = 0;
+      const timer = setInterval(() => {
+        step++;
+        const progress = step / steps;
+        const ease = 1 - Math.pow(1 - progress, 3);
+        for (const key in this.targets) {
+          this.counts[key] = Math.round(this.targets[key] * ease);
+        }
+        if (step >= steps) clearInterval(timer);
+      }, interval);
+    }
+  }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Impact AI Lab — 나만의 AI 스쿨{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-navy to-navy-dark py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-block bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">AI 맞춤 학습</span>
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Impact AI Lab</h1>
+    <p class="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+      나만의 AI 스쿨. Khan Academy, Coursera, edX, Udemy를 연동한<br>
+      맞춤형 커리큘럼 빌더와 학습 관리 시스템.
+    </p>
+    <a href="{% url 'contact' %}" class="inline-block bg-white text-navy font-bold px-8 py-4 rounded-md hover:bg-white/90 transition-colors">
+      베타 신청하기
+    </a>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-black mb-3">플랫폼 주요 기능</h2>
+      <p class="text-caption text-sm">AI 기술로 학습을 더 스마트하게</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-subbg border border-border rounded-xl p-7">
+        <div class="w-10 h-10 bg-navy-light rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">커리큘럼 빌더</h3>
+        <p class="text-sm text-caption leading-relaxed">과목·학년·레벨을 선택하면 AI가 최적화된 학습 경로를 자동 생성합니다.</p>
+      </div>
+      <div class="bg-subbg border border-border rounded-xl p-7">
+        <div class="w-10 h-10 bg-navy-light rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">콘텐츠 통합 검색</h3>
+        <p class="text-sm text-caption leading-relaxed">Khan Academy, Coursera, edX, Udemy의 방대한 강의를 한 곳에서 검색하고 연결합니다.</p>
+      </div>
+      <div class="bg-subbg border border-border rounded-xl p-7">
+        <div class="w-10 h-10 bg-navy-light rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">LMS 학습 관리</h3>
+        <p class="text-sm text-caption leading-relaxed">학습 진도율, 완료 강의 목록, 일정 관리를 대시보드에서 한눈에 확인합니다.</p>
+      </div>
+      <div class="bg-subbg border border-border rounded-xl p-7">
+        <div class="w-10 h-10 bg-navy-light rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">개인 맞춤 추천</h3>
+        <p class="text-sm text-caption leading-relaxed">학습 이력과 목표를 분석해 나에게 꼭 맞는 다음 강의를 추천합니다.</p>
+      </div>
+      <div class="bg-subbg border border-border rounded-xl p-7">
+        <div class="w-10 h-10 bg-navy-light rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">학습 일정 관리</h3>
+        <p class="text-sm text-caption leading-relaxed">목표 완료 날짜를 설정하면 AI가 최적의 학습 스케줄을 자동으로 배분합니다.</p>
+      </div>
+      <div class="bg-subbg border border-border rounded-xl p-7">
+        <div class="w-10 h-10 bg-navy-light rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">성취 배지</h3>
+        <p class="text-sm text-caption leading-relaxed">과정을 완료하면 배지를 받아 포트폴리오에 활용하세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Platform Links -->
+<section class="bg-subbg py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-black text-center mb-8">연동 플랫폼</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="bg-white border border-border rounded-xl p-5 text-center hover:border-navy transition-colors">
+        <div class="text-2xl mb-2">🟢</div>
+        <div class="font-bold text-black text-sm">Khan Academy</div>
+        <div class="text-xs text-caption mt-1">무료 K-12 콘텐츠</div>
+      </div>
+      <div class="bg-white border border-border rounded-xl p-5 text-center hover:border-navy transition-colors">
+        <div class="text-2xl mb-2">🔵</div>
+        <div class="font-bold text-black text-sm">Coursera</div>
+        <div class="text-xs text-caption mt-1">대학·기업 강의</div>
+      </div>
+      <div class="bg-white border border-border rounded-xl p-5 text-center hover:border-navy transition-colors">
+        <div class="text-2xl mb-2">🔴</div>
+        <div class="font-bold text-black text-sm">edX</div>
+        <div class="text-xs text-caption mt-1">MIT·Harvard 강의</div>
+      </div>
+      <div class="bg-white border border-border rounded-xl p-5 text-center hover:border-navy transition-colors">
+        <div class="text-2xl mb-2">🟠</div>
+        <div class="font-bold text-black text-sm">Udemy</div>
+        <div class="text-xs text-caption mt-1">실무 스킬 강의</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-navy py-16 text-center">
+  <h2 class="text-2xl font-bold text-white mb-3">나만의 학습 여정을 시작하세요</h2>
+  <p class="text-white/70 text-sm mb-6">베타 서비스 신청 시 초기 커리큘럼 설계를 무료로 제공합니다.</p>
+  <a href="{% url 'contact' %}" class="inline-block bg-white text-navy font-bold px-8 py-3 rounded-md hover:bg-white/90 transition-colors text-sm">
+    베타 신청하기
+  </a>
+</section>
+
+{% endblock %}

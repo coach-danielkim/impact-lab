@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Impact Veritas — 논술 전문 플랫폼{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="bg-black py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">논술 전문</span>
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Impact Veritas</h1>
+    <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+      대한민국 입시 논술의 새 기준.<br>
+      영어 논술 · 한국어 논술 통합 전문 플랫폼.
+    </p>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="bg-white py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-black mb-3">논술 서비스</h2>
+      <p class="text-caption text-sm">체계적인 논술 교육으로 대학 입시를 준비하세요.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-8">
+      <!-- English Essay -->
+      <div class="border border-border rounded-2xl overflow-hidden">
+        <div class="bg-navy p-8 text-white">
+          <div class="text-3xl mb-3">✍️</div>
+          <h3 class="text-2xl font-bold mb-2">영어 논술</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            SAT Essay, AP Language, 미국 대학 에세이 전문<br>
+            Critical thinking + Writing skills 통합 교육
+          </p>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-3 text-sm text-body">
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> SAT/ACT 에세이 집중 코스</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> Common App 에세이 전략 & 첨삭</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> AP Language & Composition</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> 미국 대학 학술 글쓰기 준비</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> 주간 첨삭 + 1:1 피드백</li>
+          </ul>
+          <a href="{% url 'contact' %}" class="mt-6 block w-full bg-navy hover:bg-navy-dark text-white text-center font-semibold py-3 rounded-md transition-colors text-sm">
+            수강 신청 문의
+          </a>
+        </div>
+      </div>
+
+      <!-- Korean Essay -->
+      <div class="border border-border rounded-2xl overflow-hidden">
+        <div class="bg-black p-8 text-white">
+          <div class="text-3xl mb-3">📝</div>
+          <h3 class="text-2xl font-bold mb-2">한국어 논술</h3>
+          <p class="text-white/60 text-sm leading-relaxed">
+            수능 논술, 대학별 논술 전문 대비<br>
+            인문·사회·과학 계열 통합 논술 지도
+          </p>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-3 text-sm text-body">
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> SKY·연세·고려대 논술 집중반</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> 인문·사회 계열 논술 지도</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> 과학·수리 논술 지도</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> 실전 모의 논술 테스트</li>
+            <li class="flex gap-2.5 items-start"><span class="text-navy font-bold mt-0.5">✓</span> 주간 첨삭 + 상세 피드백</li>
+          </ul>
+          <a href="{% url 'contact' %}" class="mt-6 block w-full bg-black hover:bg-gray-900 text-white text-center font-semibold py-3 rounded-md transition-colors text-sm">
+            수강 신청 문의
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="bg-subbg py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-black text-center mb-10">학습 진행 방식</h2>
+    <div class="grid sm:grid-cols-4 gap-6">
+      {% for step, title, desc in steps %}
+      <div class="text-center">
+        <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">{{ step }}</div>
+        <h4 class="font-bold text-black text-sm mb-1">{{ title }}</h4>
+        <p class="text-xs text-caption leading-relaxed">{{ desc }}</p>
+      </div>
+      {% empty %}
+      <div class="text-center">
+        <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">1</div>
+        <h4 class="font-bold text-black text-sm mb-1">수준 진단</h4>
+        <p class="text-xs text-caption leading-relaxed">현재 실력과 목표 대학을 분석합니다.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">2</div>
+        <h4 class="font-bold text-black text-sm mb-1">맞춤 커리큘럼</h4>
+        <p class="text-xs text-caption leading-relaxed">개인 목표에 맞는 학습 플랜을 설계합니다.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">3</div>
+        <h4 class="font-bold text-black text-sm mb-1">주간 첨삭</h4>
+        <p class="text-xs text-caption leading-relaxed">전문 교사의 상세한 첨삭과 피드백을 받습니다.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">4</div>
+        <h4 class="font-bold text-black text-sm mb-1">실전 준비</h4>
+        <p class="text-xs text-caption leading-relaxed">모의 테스트로 실제 시험에 대비합니다.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-crimson py-14 text-center">
+  <h2 class="text-2xl font-bold text-white mb-3">논술로 합격을 완성하세요</h2>
+  <p class="text-white/80 text-sm mb-6">무료 진단 상담 후 나에게 맞는 코스를 선택하세요.</p>
+  <a href="{% url 'contact' %}" class="inline-block bg-white text-crimson font-bold px-8 py-3 rounded-md hover:bg-white/90 transition-colors text-sm">
+    무료 진단 신청
+  </a>
+</section>
+
+{% endblock %}

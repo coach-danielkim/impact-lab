@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ — Impact Lab{% endblock %}
+
+{% block content %}
+
+<section class="bg-subbg border-b border-border py-14">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl font-extrabold text-black mb-3">자주 묻는 질문</h1>
+    <p class="text-caption text-sm max-w-xl mx-auto">궁금하신 점을 빠르게 찾아보세요.</p>
+  </div>
+</section>
+
+<section class="bg-white py-16" x-data="{ activeCategory: 'all', activeItem: null }">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+    <!-- Category Filter -->
+    <div class="flex gap-2 flex-wrap mb-8">
+      <button @click="activeCategory = 'all'"
+              :class="activeCategory === 'all' ? 'bg-navy text-white' : 'bg-subbg text-caption hover:text-navy'"
+              class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors">전체</button>
+      <button @click="activeCategory = 'admissions'"
+              :class="activeCategory === 'admissions' ? 'bg-navy text-white' : 'bg-subbg text-caption hover:text-navy'"
+              class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors">입시 컨설팅</button>
+      <button @click="activeCategory = 'ai_lab'"
+              :class="activeCategory === 'ai_lab' ? 'bg-navy text-white' : 'bg-subbg text-caption hover:text-navy'"
+              class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors">AI Lab</button>
+      <button @click="activeCategory = 'service'"
+              :class="activeCategory === 'service' ? 'bg-navy text-white' : 'bg-subbg text-caption hover:text-navy'"
+              class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors">결제·서비스</button>
+    </div>
+
+    <!-- FAQ Items -->
+    {% if faqs %}
+    <div class="space-y-3">
+      {% for faq in faqs %}
+      <div class="border border-border rounded-xl overflow-hidden"
+           x-show="activeCategory === 'all' || activeCategory === '{{ faq.category }}'">
+        <button @click="activeItem = activeItem === {{ faq.pk }} ? null : {{ faq.pk }}"
+                class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-subbg transition-colors">
+          <span class="font-semibold text-black text-sm">{{ faq.question }}</span>
+          <svg class="w-5 h-5 text-caption flex-shrink-0 ml-4 transition-transform"
+               :class="activeItem === {{ faq.pk }} ? 'rotate-180' : ''"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div x-show="activeItem === {{ faq.pk }}" x-transition class="px-6 pb-5 text-sm text-body leading-relaxed border-t border-border/50 pt-4">
+          {{ faq.answer }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <!-- Default FAQ Items -->
+    <div class="space-y-3">
+      {% for q, a, cat in default_faqs %}
+      <div class="border border-border rounded-xl overflow-hidden"
+           x-show="activeCategory === 'all' || activeCategory === '{{ cat }}'"
+           x-data="{ open: false }">
+        <button @click="open = !open" class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-subbg transition-colors">
+          <span class="font-semibold text-black text-sm">{{ q }}</span>
+          <svg class="w-5 h-5 text-caption flex-shrink-0 ml-4 transition-transform" :class="open ? 'rotate-180' : ''"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div x-show="open" x-transition class="px-6 pb-5 text-sm text-body leading-relaxed border-t border-border/50 pt-4">
+          {{ a }}
+        </div>
+      </div>
+      {% empty %}
+      <!-- Static Fallback FAQ -->
+      {% for item in static_faqs %}
+      <div class="border border-border rounded-xl overflow-hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-subbg transition-colors">
+          <span class="font-semibold text-black text-sm">{{ item.0 }}</span>
+          <svg class="w-5 h-5 text-caption flex-shrink-0 ml-4 transition-transform" :class="open ? 'rotate-180' : ''"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div x-show="open" x-transition class="px-6 pb-5 text-sm text-body leading-relaxed border-t border-border/50 pt-4">
+          {{ item.1 }}
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Contact CTA -->
+    <div class="mt-12 bg-subbg border border-border rounded-xl p-6 text-center">
+      <h3 class="font-bold text-black mb-2">찾는 답이 없으신가요?</h3>
+      <p class="text-caption text-sm mb-4">직접 문의해 주시면 전문 컨설턴트가 친절히 답변드립니다.</p>
+      <a href="{% url 'contact' %}" class="inline-block bg-navy hover:bg-navy-dark text-white font-semibold px-6 py-2.5 rounded-md transition-colors text-sm">
+        문의하기
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
