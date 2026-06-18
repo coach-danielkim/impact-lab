@@ -2,25 +2,20 @@ services:
   - type: web
     name: impact-lab
     runtime: python
+    region: singapore
+    plan: free
     buildCommand: "./build.sh"
     startCommand: "gunicorn config.wsgi:application"
-    plan: free
     envVars:
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: ".onrender.com,impactlab.cloud,www.impactlab.cloud"
+        value: ".onrender.com"
       - key: DATABASE_URL
-        fromDatabase:
-          name: impact-lab-db
-          property: connectionString
+        value: "sqlite:///db.sqlite3"
       - key: PYTHON_VERSION
         value: "3.11.0"
-
-databases:
-  - name: impact-lab-db
-    plan: free
-    databaseName: impact_lab
-    user: impact_lab
+      - key: EMAIL_BACKEND
+        value: "django.core.mail.backends.console.EmailBackend"
